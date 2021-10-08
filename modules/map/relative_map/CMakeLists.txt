@@ -1,0 +1,19 @@
+project(map_relative_map)
+add_subdirectory(proto)
+add_subdirectory(common)
+
+add_library(map_relative_map_navigation_lane_lib navigation_lane.cc )
+target_link_libraries(map_relative_map_navigation_lane_lib
+PUBLIC 
+cyber_common_log
+common_vehicle_state_provider
+common_vehicle_state_proto
+localization_proto
+map_relative_map_common_gflags
+map_relative_map_navigation_proto
+map_relative_map_navigator_config_proto
+map_relative_map_config_proto
+perception_obstacle_proto
+common_util_util
+
+)

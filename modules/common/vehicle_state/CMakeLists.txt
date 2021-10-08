@@ -1,0 +1,16 @@
+project(common_vehicle_state)
+
+add_subdirectory(proto)
+
+add_library(common_vehicle_state_provider vehicle_state_provider.cc )
+target_link_libraries(common_vehicle_state_provider
+PUBLIC
+cyber_common_log
+common_configs_config_gflags
+common_math_geometry
+common_math_quaternion
+common_status
+common_vehicle_state_proto
+localization_common_gflags
+Eigen3::Eigen
+)

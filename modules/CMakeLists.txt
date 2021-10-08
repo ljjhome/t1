@@ -1,0 +1,10 @@
+project(modules)
+
+add_subdirectory(common)
+add_subdirectory(localization)
+add_subdirectory(perception)
+add_subdirectory(routing)
+add_subdirectory(canbus)
+add_subdirectory(planning)
+add_subdirectory(apollo_tinyxml2)
+add_subdirectory(map)

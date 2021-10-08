@@ -1,0 +1,9 @@
+project(common_vehicle_state_proto)
+
+add_library(common_vehicle_state_proto vehicle_state.pb.cc )
+target_include_directories(common_vehicle_state_proto PUBLIC ${protobuf_include_dir})
+target_link_libraries(common_vehicle_state_proto 
+PUBLIC 
+canbus_chassis_proto
+localization_pose_proto
+)

@@ -1,0 +1,7 @@
+project(routing_strategy)
+
+add_library(routing_a_star_strategy a_star_strategy.cc)
+target_link_libraries(routing_a_star_strategy
+PUBLIC 
+routing_graph
+)

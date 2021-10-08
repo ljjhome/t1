@@ -1,0 +1,28 @@
+project(routing_core)
+
+add_library(routing_core_result_generator result_generator.cc )
+target_link_libraries(routing_core_result_generator 
+PUBLIC 
+routing_graph 
+)
+
+add_library(routing_core_black_list_range_generator black_list_range_generator.cc )
+target_link_libraries(routing_core_black_list_range_generator
+PUBLIC 
+routing_graph
+)
+
+add_library(routing_core_navigator navigator.cc )
+target_link_libraries(routing_core_navigator
+PUBLIC 
+routing_core_black_list_range_generator
+routing_core_result_generator
+common_util_util
+routing_a_star_strategy
+)
+
+add_library(routing_core INTERFACE )
+target_link_libraries(routing_core
+INTERFACE 
+routing_core_navigator
+)
